@@ -13,9 +13,9 @@ def login():
     driver.implicitly_wait(5)
     driver.find_element_by_partial_link_text('כניסה').click() # click on login button
     driver.find_element_by_id('identifierId').send_keys(email) # set email into information login
-    driver.find_element_by_xpath('//*[@id="identifierNext"]/span/span').click() # click to countinue
+    driver.find_element_by_id('identifierId').send_keys(Keys.ENTER) # click to countinue
     driver.find_element_by_name('password').send_keys(password) # set password into information login
-    driver.find_element_by_xpath('//*[@id="passwordNext"]/span/span').click() # click to countinue
+    driver.find_element_by_name('password').send_keys(Keys.ENTER) # click to countinue
 
 
 def print_mymix():
