@@ -4,6 +4,11 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from getpass import getpass
+
+name = input("Enter your name: ")
+email = input("Enter your email: ")
+password = getpass("Enter your password: ")
 
 delay = 5
 
@@ -25,10 +30,10 @@ def entry_button():
 def create_account():
     entry_button()
     driver.find_element_by_xpath('//*[@id="ember572"]/div/div[1]/div/div/div[3]/p/span').click() # click on the button to go to registerion
-    driver.find_element_by_xpath("//input[@type='text']").send_keys("amit") # set name into information register
-    driver.find_element_by_xpath("//input[@type='email']").send_keys("amitmizrahi231055@gmail.com") # set email into information register
-    password = driver.find_element_by_xpath('//*[@id="valPass"]').send_keys('MF4ever!') # set password into information register
-    ConfirmPassword = driver.find_element_by_xpath('//*[@id="ember1033"]').send_keys('MF4ever!') # set confirm password into information register
+    driver.find_element_by_xpath("//input[@type='text']").send_keys(name) # set name into information register
+    driver.find_element_by_xpath("//input[@type='email']").send_keys(email) # set email into information register
+    password = driver.find_element_by_xpath('//*[@id="valPass"]').send_keys(password) # set password into information register
+    ConfirmPassword = driver.find_element_by_xpath('//*[@id="ember1033"]').send_keys(password) # set confirm password into information register
     driver.execute_script("arguments[0].click();", driver.find_element_by_xpath('//*[@id="ember1034"]/label/i')) # click on check box that we agree to the terms
     driver.find_element_by_xpath('//*[@id="ember1025"]/button').click() # click on the button to register
 
@@ -37,8 +42,8 @@ def create_account():
 def login():
     entry_button()
     time.sleep(1)
-    driver.find_element_by_xpath("//input[@type='email']").send_keys("amitmizrahi231055@gmail.com")
-    driver.find_element_by_xpath("//input[@type='password']").send_keys("MF4ever!")
+    driver.find_element_by_xpath("//input[@type='email']").send_keys(email)
+    driver.find_element_by_xpath("//input[@type='password']").send_keys(password)
     driver.find_element_by_xpath('//*[@id="ember1005"]/button').click()
 
 
@@ -94,7 +99,7 @@ def sender_receiver():
     time.sleep(3)
     driver.find_element_by_xpath('//*[@id="ember1310"]/div[4]/div/div[1]/div[2]/div/button/span/span[1]').click()
     time.sleep(3)
-    driver.find_element_by_xpath('//input[@type="email"]').send_keys("amitmizrahi231055@gmail.com")
+    driver.find_element_by_xpath('//input[@type="email"]').send_keys(email)
     time.sleep(1)
     driver.find_element_by_xpath('//*[@id="ember1310"]/div[4]/div/div[3]/div/div[2]/button[2]').click()
 
