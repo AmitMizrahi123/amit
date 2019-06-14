@@ -24,14 +24,13 @@ def entry_button():
 # function that create account
 def create_account():
     entry_button()
-    for entryLogin in driver.find_elements_by_xpath(r'//*[@id="ember572"]/div/div[1]/div/div/div[3]/p/span'):
-        entryLogin.click()
-    driver.find_element_by_xpath("//input[@type='text']").send_keys("amit")
-    driver.find_element_by_xpath("//input[@type='email']").send_keys("amitmizrahi231055@gmail.com")
-    for password in driver.find_elements_by_xpath("//input[@type='password']"):
-        password.send_keys("MF4ever!")
-    driver.execute_script("arguments[0].click();", driver.find_element_by_xpath('//*[@id="ember1034"]/label/i'))
-    driver.find_element_by_xpath('//*[@id="ember1025"]/button').click()
+    driver.find_element_by_xpath('//*[@id="ember572"]/div/div[1]/div/div/div[3]/p/span').click() # click on the button to go to registerion
+    driver.find_element_by_xpath("//input[@type='text']").send_keys("amit") # set name into information register
+    driver.find_element_by_xpath("//input[@type='email']").send_keys("amitmizrahi231055@gmail.com") # set email into information register
+    password = driver.find_element_by_xpath('//*[@id="valPass"]').send_keys('MF4ever!') # set password into information register
+    ConfirmPassword = driver.find_element_by_xpath('//*[@id="ember1033"]').send_keys('MF4ever!') # set confirm password into information register
+    driver.execute_script("arguments[0].click();", driver.find_element_by_xpath('//*[@id="ember1034"]/label/i')) # click on check box that we agree to the terms
+    driver.find_element_by_xpath('//*[@id="ember1025"]/button').click() # click on the button to register
 
 
 # function that login with create account that we create
