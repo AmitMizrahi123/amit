@@ -1,0 +1,235 @@
+@import url('http://fonts.googleapis.com/css?family=Raleway');
+@import url('http://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 200%;
+    font-weight: 700;
+    color: #2C2C2C;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2C2C2C;
+    font-size: 180%;
+    font-height: 300%;
+    text-align: justify;
+    font-weight: 300%;
+}
+img{
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+.intro{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url(https://static.pexels.com/photos/248159/pexels-photo-248159.jpeg) no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
+}
+.intro .inner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+.content{
+    max-width: 600px;
+    margin: auto;
+}
+.content a{
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
+}
+h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 300%;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    padding: 2%;
+    text-shadow: 0px 0px 250px #000;
+}
+.content p{
+    color: #FFF;
+}
+.inner{
+    max-width: 600px;
+    margin: auto;
+    font-size: 170%;
+    line-height: 1.6;
+    padding: 10px;
+}
+/*--- start nav ---*/
+nav{
+    float: left;
+    padding: 5% 5% 0 0;
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    float: left;
+}
+nav ul li {
+    font-family: 'Raleway', sans-serif;
+    font-size: 120%;
+}
+nav ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+nav ul, nav:active ul {
+    display: none;
+    padding: 8px 0;
+    left: 45px;
+    top: 60px;
+    width: 20%;
+    z-index: 1000;
+}
+nav li {
+    width: 100%;
+    padding: 8px 0 10px 7px;
+    margin: 0;
+}
+nav:hover ul {
+    display: block;
+    position: absolute;
+}
+#menu-icon {
+    width: 30px;
+    height: 26px;
+    background: url(https://i.imagesup.co/images2/8a0dd079e7fcd85db3b1cf2b98cb79455ecae77b.png) center;
+    display: inline-block;
+    margin: 50px 0 0 50px;
+}
+/*---End nav ---*/
+.left-col {
+    width: 60%;
+    float: left;
+    margin: 4% 0 4% 4%;
+}
+.sidebar{
+    width: 25%;
+    float: left;
+    margin: 4%;
+}
+.one-third-port{
+    width: 29.333%;
+    padding: 2%;
+    float: left;
+}
+.one-third-port img:hover{
+    opacity: .6;
+}
+.contact p{
+    text-align: center;
+    letter-spacing: 5px;
+}
+.contact a{
+    color:#2C2C2C;
+    text-decoration: none;
+}
+.break{
+    display: none;
+}
+.clearfix{
+    clear: both;
+    height: 3%;
+}
+.parallax{
+    background: url(https://i.imagesup.co/images2/9923ad74308d84862580433a956f31387e1c2ade.jpg) repeat fixed 100%;
+    opacity: .5;
+}
+.parallax-inner{
+    padding-top: 17%;
+}
+.social{
+    text-decoration: none;
+    text-align: center;
+}
+.social li{
+    display: inline;
+}
+.social i {
+    font-size: 270%;
+    margin: 1% 5% 7% 4%;
+    color: #2C2C2C;
+}
+.social i:hover{
+    color: #606060;
+}
+footer.second{
+    background-color: #2C2C2C;
+}
+footer.second p {
+    color: #FFF;
+    text-align: center;
+    padding:3%;
+}
+@media screen and (max-width: 768px){
+    #menu-icon{
+        margin: 26px 0 0 26px;
+    }
+    nav ul, nav: active ul{
+        padding: 8px 0;
+        left: 23px;
+        top: 24px;
+        width: 50;
+    }
+    .inner{
+        font-size: 120%;
+    }
+    .content h1{
+        font-size: 180%;
+    }
+    p{
+        font-size: 120%;
+    }
+    h2{
+        font-size: 160%;
+    }
+    .left-col{
+        width: 96%;
+        margin: 0 0 3% 0;
+        padding: 0 2%;
+    }
+    .sidebar{
+        width: 96%;
+        margin: 0 auto;
+    }
+    img{
+        padding: 2%;
+    }
+    .one-third-port{
+        width: 96%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .break{
+        display: block;
+    }
+    .parallax{
+        display: none;
+    }
+    .social i{
+        font-size: 170%;
+    }
+    .social li a{
+        height: 44px;
+    }
+}
