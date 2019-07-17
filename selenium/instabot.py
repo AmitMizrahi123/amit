@@ -3,13 +3,13 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Variables where we will save our information about creating a user in the Instagram
-email = input('insert email address: ')
-fullName = input('insert full name address: ')
-username = input('choose username: ')
-password = input('insert password: ')
+email = input('Enter email address for bot user: ')
+fullName = input('Enter full name for bot user: ')
+username = input('Enter username bot: ')
+password = input('Enter password bot: ')
 
-# A variable that we'll apply when we want to make a new user
-user_exists = input('do you already have user in Instagram Y(Yes)/N(No): ').capitalize()
+# A variable that we'll apply when we want to make a new bot
+user_exists = input('do you already have bot in Instagram Y(Yes)/N(No): ').capitalize()
 
 # A variable in which we know whether you are already following it or not
 followOrNotFollow = input('do you already follow this user Y(Yes)/N(No): ').capitalize()
@@ -65,15 +65,22 @@ class Instagram:
         if follow == 1:
             follow = bot.find_element_by_class_name('_0mzm-')
             follow.click()
+            # you have 30 sec to confirm the follow
+            time.sleep(20)
+            # refresh the page
+            bot.refresh()
+            time.sleep(3)
         bot.execute_script('window.scrollBy(0, document.body.scrollHeight)')
         time.sleep(2)
         posts = bot.find_elements_by_class_name('v1Nh3')
         links = [elem.find_element_by_tag_name('a').get_attribute('href') for elem in posts]
         for link in links:
             bot.get(link)
+            time.sleep(2)
             like_photo = bot.find_element_by_xpath('//*[@id="react-root"]/section/main/div/div/article/div[2]/section[1]/span[1]/button/span')
             like_photo.click()
             time.sleep(5)
+        print('likes distribution was successfully completed')
         bot.quit()
 
 
@@ -90,7 +97,7 @@ if __name__ == '__main__':
                 instabot.choose_account(usernameLike, 0)
             # check if you are following after your friend - Yes
             else:
-                # push data for instance function to add followers 
+                # push data for instance function to add followers
                 instabot.choose_account(usernameLike, 1)
             break
         # check if user exists - No
