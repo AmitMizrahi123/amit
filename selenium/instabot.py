@@ -3,8 +3,8 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Variables where we will save our information about creating a user in the Instagram
-email = input('Enter email address for bot user: ')
-fullName = input('Enter full name for bot user: ')
+email = input('Enter email address bot: ')
+fullName = input('Enter full name  bot: ')
 username = input('Enter username bot: ')
 password = input('Enter password bot: ')
 
