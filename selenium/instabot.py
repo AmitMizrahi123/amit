@@ -65,7 +65,7 @@ class Instagram:
         if follow == 1:
             follow = bot.find_element_by_class_name('_0mzm-')
             follow.click()
-            # you have 30 sec to confirm the follow
+            # you have 20 sec to confirm the follow
             time.sleep(20)
             # refresh the page
             bot.refresh()
